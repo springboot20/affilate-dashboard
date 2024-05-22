@@ -15,7 +15,6 @@ export default function AppRouter() {
     <Routes>
       <Route path='/' element={<Navigate to='/' />} />
       <Route path='/login' element={<Navigate to='/login' />} />
-
       <Route
         path='/dashboard'
         element={
