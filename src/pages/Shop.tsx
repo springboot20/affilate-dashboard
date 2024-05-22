@@ -34,7 +34,7 @@ const Shop = () => {
     visible: { opacity: 1, transition: { duration: 0.3 } },
   };
   return (
-    <section className='mt-8 h-screen mb-8'>
+    <section className='mt-8 mb-8'>
       <motion.div
         layout
         variants={gridVariants}

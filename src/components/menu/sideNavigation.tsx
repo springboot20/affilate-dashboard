@@ -88,7 +88,7 @@ export const Navigation = ({
         <div
           className={classNames(
             open ? 'translate-x-0' : '-translate-x-full',
-            'lg:hidden w-2/4 fixed left-0 top-0 bg-white h-screen px-10 z-20 transition-transform duration-300'
+            'lg:hidden w-[32rem] fixed left-0 top-0 bg-white h-screen px-10 z-20 transition-transform duration-300'
           )}>
           <button
             className='absolute right-8 top-6 inline-flex items-center justify-center rounded-md p-2 bg-gray-100  text-gray-900'
