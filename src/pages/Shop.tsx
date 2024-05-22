@@ -39,7 +39,7 @@ const Shop = () => {
         layout
         variants={gridVariants}
         {...config}
-        className='px-12 grid grid-cols-1 md:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-3 gap-9'>
+        className='px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9'>
         <motion.div layout>
           <Card className='h-[38rem]' placeholder={undefined}>
             <CardHeader placeholder={'card header'} className='relative mt-4' shadow={false}>
@@ -180,4 +180,4 @@ const Shop = () => {
   );
 };
 
-export default Shop
+export default Shop;
