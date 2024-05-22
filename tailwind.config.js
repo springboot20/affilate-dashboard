@@ -13,7 +13,7 @@ const config = withMT({
       },
       maxWidth: {
         '8xl': '90rem',
-        '9xl': '94rem',
+        // '9xl': '94rem',
       },
       colors: {
         'affiliate-green': '#05CE81',
