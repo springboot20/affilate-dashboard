@@ -41,11 +41,12 @@ const Login: React.FC = () => {
     },
   };
 
-  const { errors, values, handleChange, handleSubmit, touched, handleBlur } = useFormik({
-    initialValues: initialValues,
-    validationSchema: loginSchema,
-    onSubmit: async () => {},
-  });
+  const { errors, values, handleChange, handleSubmit, touched, handleBlur, isSubmitting } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: loginSchema,
+      onSubmit: async () => {},
+    });
 
   return (
     <motion.div {...motionConfig}>
@@ -66,7 +67,7 @@ const Login: React.FC = () => {
               <fieldset className='mb-2'>
                 <Typography
                   variant='small'
-                  className='text-gray-700 font-semibold text-xl mb-3'
+                  className='text-gray-700 font-normal text-xl mb-3'
                   placeholder=''>
                   Username / Email
                 </Typography>
@@ -93,7 +94,7 @@ const Login: React.FC = () => {
               <fieldset className='mb-2'>
                 <Typography
                   variant='small'
-                  className='text-gray-700 font-semibold text-xl mb-3'
+                  className='text-gray-700 font-normal text-xl mb-3'
                   placeholder=''>
                   Password
                 </Typography>
@@ -129,14 +130,15 @@ const Login: React.FC = () => {
                 />
               </fieldset>
             </div>
-            <Button
-              className='mt-6 py-3.5 rounded-3xl capitalize disabled:bg-gray-500 text-2xl'
-              fullWidth
-              placeholder=''
-              disabled
-              color='light-blue'>
+            <button
+              className={classNames(
+                'mt-6 py-3.5 px-3 w-full rounded-xl capitalize text-gray-100 shadow-md hover:shadow-md text-2xl font-medium',
+                isSubmitting ? 'bg-light-blue-500' : 'bg-light-blue-500/60'
+              )}
+              disabled={isSubmitting}
+              type='submit'>
               login
-            </Button>
+            </button>
             <div className='w-full flex justify-between items-center my-5'>
               <Checkbox
                 crossOrigin={undefined}
@@ -153,7 +155,7 @@ const Login: React.FC = () => {
               />
               <p className=''>
                 Don't have an account?{' '}
-                <Link to='/register' className='text-light-blue-600'>
+                <Link to='/register' className='ml-1 text-light-blue-600'>
                   Register
                 </Link>
               </p>

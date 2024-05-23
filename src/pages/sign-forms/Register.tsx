@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
-import { Card, Input, Checkbox, Button, Typography, CardHeader } from '@material-tailwind/react';
+import { Card, Input, Checkbox, Typography, CardHeader } from '@material-tailwind/react';
 import { RegisterFormValues } from '../../types/form.types';
 import { useFormik } from 'formik';
 import { registerSchema } from '../../schema/register.schema';
@@ -193,16 +193,16 @@ const Register = () => {
                   />
                 </fieldset>
               </div>
-              <Button
-                className='mt-6 py-3.5 rounded-xl capitalize shadow-md hover:shadow-md  disabled:bg-gray-500 text-2xl'
-                color='light-blue'
+              <button
+                className={classNames(
+                  'mt-6 py-3.5 px-3 w-full rounded-xl capitalize text-gray-100 shadow-md hover:shadow-md text-2xl font-medium',
+                  isSubmitting ? 'bg-light-blue-500' : 'bg-light-blue-500/60'
+                )}
                 disabled={isSubmitting}
-                fullWidth
-                placeholder=''
                 type='submit'>
-                sign up
-              </Button>
-              <div className='w-full flex justify-between items-center my-5'>
+                register
+              </button>
+              <div className='w-full flex justify-between items-center my-5 flex-col'>
                 <Checkbox
                   crossOrigin={undefined}
                   color='light-blue'
@@ -210,7 +210,7 @@ const Register = () => {
                     <Typography
                       variant='small'
                       color='gray'
-                      className='flex items-center font-normal ml-1 mt-1'
+                      className='flex items-center font-normal ml-1 mt-1  '
                       placeholder=''>
                       I agree the
                       <a href='#' className=' transition-colors hover:text-gray-900'>
@@ -220,9 +220,9 @@ const Register = () => {
                   }
                   containerProps={{ className: '-ml-0 mt-1' }}
                 />
-                <p className=''>
+                <p className='inline-flex items-center'>
                   Already have an account?{' '}
-                  <Link to='/login' className='text-light-blue-600'>
+                  <Link to='/login' className='ml-1 text-light-blue-600'>
                     Login
                   </Link>
                 </p>
