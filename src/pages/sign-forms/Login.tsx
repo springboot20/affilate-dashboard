@@ -14,7 +14,7 @@ import { LoginFormValues } from '../../types/form.types';
 import { loginSchema } from '../../schema/login.schema';
 import { motion } from 'framer-motion';
 import { classNames } from '../../utils/index';
-import { GoogleIcon, GitHubIcon } from '../../components/icons';
+import { GoogleIcon } from '../../components/icons';
 import { Link } from 'react-router-dom';
 
 const initialValues: LoginFormValues = {
@@ -173,21 +173,6 @@ const Login: React.FC = () => {
                 </Typography>
                 <span className='absolute right-0 top-1/2 -translate-y-1/2 p-6 bg-light-blue-600 group:hover:bg-light-blue-700'>
                   <GoogleIcon className='h-6 w-6 fill-white bg-clip-text text-transparent' />
-                </span>
-              </Button>
-              <Button
-                placeholder='sign options'
-                variant='gradient'
-                color='light-blue'
-                className='shadow-2xl relative group capitalize flex-shrink-0 flex w-full items-center overflow-hidden gap-3 group pr-[72px]'>
-                <Typography
-                  placeholder='sign option text'
-                  as='span'
-                  className='text-xl font-medium tracking-wider'>
-                  Sign in with Github
-                </Typography>
-                <span className='absolute right-0 top-1/2 -translate-y-1/2 p-6 bg-light-blue-600 group:hover:bg-light-blue-700'>
-                  <GitHubIcon className='h-6 w-6 fill-white' />
                 </span>
               </Button>
             </div>
