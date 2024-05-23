@@ -36,15 +36,16 @@ const Register = () => {
     },
   };
 
-  const { values, handleBlur, errors, handleSubmit, handleChange, touched } = useFormik({
-    initialValues: initialValues,
-    validationSchema: registerSchema,
-    onSubmit: async (values, actions) => {
-      // handleReset();
+  const { values, handleBlur, errors, handleSubmit, handleChange, touched, isSubmitting } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: registerSchema,
+      onSubmit: async (values, actions) => {
+        // handleReset();
 
-      actions.resetForm();
-    },
-  });
+        actions.resetForm();
+      },
+    });
   return (
     <motion.div {...motionConfig}>
       <section className='h-[70vh] grid place-items-center'>
@@ -195,7 +196,7 @@ const Register = () => {
               <Button
                 className='mt-6 py-3.5 rounded-3xl capitalize disabled:bg-gray-500 text-2xl'
                 color='light-blue'
-                disabled
+                disabled={isSubmitting}
                 fullWidth
                 placeholder=''
                 type='submit'>
