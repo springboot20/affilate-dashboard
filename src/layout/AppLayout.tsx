@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { Fragment, useState } from 'react';
 import { Bars3Icon, CogIcon, UserIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { Menu, Transition } from '@headlessui/react';
@@ -8,7 +8,7 @@ import { Button } from '@material-tailwind/react';
 import { Navigation } from '../components/menu/sideNavigation';
 import { Input } from '../components/input/Input';
 
-const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const AppLayout: React.FC = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className='w-full flex justify-between items-stretch h-screen flex-shrink-0'>
@@ -130,7 +130,7 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </div>
             </div>
           </header>
-          {children}
+          <Outlet />
         </div>
       </main>
     </div>
