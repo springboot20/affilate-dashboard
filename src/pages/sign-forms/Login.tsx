@@ -153,7 +153,7 @@ const Login: React.FC = () => {
               />
               <p className=''>
                 Don't have an account?{' '}
-                <Link to='/' className='text-light-blue-600'>
+                <Link to='/register' className='text-light-blue-600'>
                   Register
                 </Link>
               </p>
