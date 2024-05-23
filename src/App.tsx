@@ -21,15 +21,14 @@ function App() {
 
   return (
     <Routes>
-
       <Route
         path='/'
         element={tokens && user ? <Navigate to='/login' /> : <Navigate to='/dashboard' />}
       />
-      
+
       <Route element={<AuthLayout />}>
         <Route
-          path='/'
+          path='/register'
           element={
             <PublicRoute>
               <Register />
