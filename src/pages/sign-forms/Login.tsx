@@ -146,14 +146,14 @@ const Login: React.FC = () => {
                   <Typography
                     variant='small'
                     color='gray'
-                    className='flex items-center font-normal ml-1 mt-1'
+                    className='flex items-center font-normal ml-1 mt-1 text-xl'
                     placeholder=''>
                     Remember me
                   </Typography>
                 }
                 containerProps={{ className: 'ml-1' }}
               />
-              <p className=''>
+              <p className='text-xl'>
                 Don't have an account?{' '}
                 <Link to='/register' className='ml-1 text-light-blue-600'>
                   Register

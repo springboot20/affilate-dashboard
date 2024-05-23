@@ -160,7 +160,7 @@ const Register = () => {
                 type='submit'>
                 register
               </button>
-              <div className='w-full flex justify-between items-center my-5 flex-col'>
+              <div className='w-full flex justify-between items-center my-5 flex-col md:flex-row'>
                 <Checkbox
                   crossOrigin={undefined}
                   color='light-blue'
@@ -168,7 +168,7 @@ const Register = () => {
                     <Typography
                       variant='small'
                       color='gray'
-                      className='flex items-center font-normal ml-1 mt-1  '
+                      className='flex items-center font-normal ml-1 mt-1 text-xl'
                       placeholder=''>
                       I agree the
                       <a href='#' className=' transition-colors hover:text-gray-900'>
@@ -176,9 +176,9 @@ const Register = () => {
                       </a>
                     </Typography>
                   }
-                  containerProps={{ className: '-ml-0 mt-1' }}
+                  containerProps={{ className: '-ml-0' }}
                 />
-                <p className='inline-flex items-center'>
+                <p className='inline-flex items-center text-xl'>
                   Already have an account?{' '}
                   <Link to='/login' className='ml-1 text-light-blue-600'>
                     Login
