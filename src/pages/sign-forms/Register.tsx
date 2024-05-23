@@ -13,12 +13,10 @@ const initialValues: RegisterFormValues = {
   username: '',
   email: '',
   password: '',
-  confirmPassword: '',
 };
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [showCPassword, setCShowPassword] = useState<boolean>(false);
 
   const motionConfig = {
     initial: {
@@ -152,50 +150,10 @@ const Register = () => {
                     }
                   />
                 </fieldset>
-                <fieldset>
-                  <Typography
-                    variant='small'
-                    className='mb-2 text-xl font-medium text-gray-800'
-                    placeholder=''>
-                    Confirm password
-                  </Typography>
-                  <Input
-                    id='confirmPassword'
-                    crossOrigin={undefined}
-                    type={showCPassword ? 'text' : 'password'}
-                    size='lg'
-                    value={values.confirmPassword}
-                    placeholder='********'
-                    className={classNames(
-                      errors.password && touched.password
-                        ? '!border-t-red-500 !border-red-500'
-                        : '',
-                      '!border-t-gray-500 !border-gray-500 py-6'
-                    )}
-                    labelProps={{
-                      className: 'before:content-none after:content-none',
-                    }}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    icon={
-                      showCPassword ? (
-                        <EyeSlashIcon
-                          className='text-gray-500 h-7 cursor-pointer'
-                          onClick={() => setCShowPassword((prevState) => !prevState)}
-                        />
-                      ) : (
-                        <EyeIcon
-                          className='text-gray-500 h-7 cursor-pointer'
-                          onClick={() => setCShowPassword((prevState) => !prevState)}
-                        />
-                      )
-                    }
-                  />
-                </fieldset>
               </div>
               <button
                 className={classNames(
-                  'mt-6 py-3.5 px-3 w-full rounded-xl capitalize text-gray-100 shadow-md hover:shadow-md text-2xl font-medium',
+                  'mt-6 py-3 px-3 w-full rounded-xl capitalize text-gray-100 shadow-md hover:shadow-md text-2xl font-medium',
                   isSubmitting ? 'bg-light-blue-500' : 'bg-light-blue-500/60'
                 )}
                 disabled={isSubmitting}
