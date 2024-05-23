@@ -194,7 +194,7 @@ const Register = () => {
                 </fieldset>
               </div>
               <Button
-                className='mt-6 py-3.5 rounded-3xl capitalize disabled:bg-gray-500 text-2xl'
+                className='mt-6 py-3.5 rounded-xl capitalize shadow-md hover:shadow-md  disabled:bg-gray-500 text-2xl'
                 color='light-blue'
                 disabled={isSubmitting}
                 fullWidth
