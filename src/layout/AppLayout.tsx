@@ -150,7 +150,7 @@ const AppLayout: React.FC = () => {
                           <Menu.Item>
                             {({ active }) => (
                               <NavLink
-                                to='/auth/register'
+                                to='/register'
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
                                   'inline-flex space-x-3 items-center w-full px-4 py-2 sm:text-sm text-gray-700 h-14'
