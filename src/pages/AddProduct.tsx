@@ -32,7 +32,7 @@ const AddProduct = () => {
     <motion.div {...motionConfig}>
       <section
         className={classNames(
-          'mx-auto mt-8 lg:px-0',
+          'mx-auto lg:px-0 mt-8',
           completed
             ? 'place-content-center sm:place-items-center h-[calc(100vh-2rem)] mt-0'
             : 'sm:place-items-center',
