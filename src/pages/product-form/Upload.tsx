@@ -68,7 +68,7 @@ export const Upload = ({
   console.log(uploadsImageFiles);
 
   return (
-    <Card className='bg-white w-[44rem] p-9' placeholder={undefined}>
+    <Card className='bg-white sm:w-[50rem] md:w-auto  p-9' placeholder={undefined}>
       <Tab value='add' className='bg-transparent flex justify-start' placeholder='previous tab'>
         <Button
           size='lg'
@@ -86,7 +86,7 @@ export const Upload = ({
           layout
           variants={gridVariants}
           {...config}
-          className='grid grid-cols-2 gap-8 place-content-center place-items-center mt-8'>
+          className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 place-content-center place-items-center mt-8'>
           {uploadsImageFiles &&
             uploadsImageFiles.map((image) => {
               return (
@@ -100,6 +100,7 @@ export const Upload = ({
                       className='m-0 top-0 bottom-0 h-full absolute'
                       shadow={false}>
                       <img
+                        alt=''
                         src={URL.createObjectURL(image)}
                         className='h-full object-center aspect-auto max-w-full'
                       />
@@ -108,6 +109,7 @@ export const Upload = ({
                       <button
                         onClick={() => handleImageRemove(image)}
                         className='group-hover:opacity-100 opacity-0 z-30 absolute bottom-4 right-4 h-10 w-16 flex justify-center items-center rounded-md bg-black/40'>
+                        <span className='sr-only'>trash</span>
                         <TrashIcon className='h-6 w-6 stroke-[3] text-white' />
                       </button>
                     </CardBody>
@@ -127,10 +129,9 @@ export const Upload = ({
           </motion.div>
         </motion.div>
         <Button
-          fullWidth
           placeholder='complete button'
           onClick={() => setCompleted((prevState) => !prevState)}
-          className='bg-affiliate-green capitalize rounded-3xl text-center text-white text-xl py-4 px-3 mt-10'>
+          className='w-1/2 mx-auto bg-affiliate-green capitalize rounded-xl text-center text-white text-xl py-5 px-3 mt-10'>
           <span>Complete</span>
         </Button>
       </CardBody>
