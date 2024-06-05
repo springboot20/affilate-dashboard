@@ -1,4 +1,4 @@
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './hooks/useAuth';
 import AppLayout from './layout/AppLayout';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthLayout from './layout/AuthLayout';

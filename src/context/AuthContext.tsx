@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import { AuthContextType, AuthContextProps } from '../types/context.types';
 import { UserInterface } from '../types/user.types';
 import { apiRequestHandler, LocalStorage } from '../utils/api';
@@ -6,7 +6,7 @@ import { register, login, logout } from '../api/axios.config';
 import { Navigate } from 'react-router-dom';
 import { Loader } from '../components/Loader';
 
-const AuthContext = createContext<AuthContextType>({
+export const AuthContext = createContext<AuthContextType>({
   tokens: null,
   user: null,
   register: async () => Promise<void>,
@@ -82,8 +82,4 @@ export const AuthProvider = ({ children }: AuthContextProps) => {
       {loading ? <Loader /> : children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuth = () => {
-  return useContext(AuthContext);
 };
