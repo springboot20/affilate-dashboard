@@ -34,7 +34,7 @@ export const Add = ({
   ];
 
   return (
-    <Card placeholder={undefined} className='p-8 w-[60rem]'>
+    <Card placeholder={undefined} className='p-8 sm:w-[50rem] md:w-[60rem]'>
       <CardBody placeholder={undefined}>
         <form className='grid grid-cols-1 md:grid-cols-4 gap-4'>
           <fieldset className='col-span-full md:col-span-2 mb-14'>

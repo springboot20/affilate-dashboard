@@ -34,8 +34,8 @@ const AddProduct = () => {
         className={classNames(
           'mx-auto mt-8 lg:px-0',
           completed
-            ? 'place-content-center place-items-center h-[calc(100vh-2rem)] mt-0'
-            : 'place-items-center',
+            ? 'place-content-center sm:place-items-center h-[calc(100vh-2rem)] mt-0'
+            : 'sm:place-items-center',
           'grid overflow-hidden'
         )}>
         {completed ? (
