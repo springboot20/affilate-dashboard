@@ -112,7 +112,7 @@ export const BellIcon = () => {
       viewBox='0 0 28 30'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
-      className='h-9'>
+      className='h-8'>
       <path
         d='M8.64082 27.2581C9.86792 28.818 11.7956 29.8232 13.9634 29.8232C16.1311 29.8232 18.0588 28.818 19.2859 27.2581C15.7526 27.7368 12.1741 27.7368 8.64082 27.2581Z'
         fill='#1F2937'
@@ -249,7 +249,7 @@ export const GitHubIcon: React.FC<{ className: string }> = ({ className }) => {
 
 export const GoogleIcon: React.FC<{ className: string }> = ({ className }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 488 512' fill="none" className={className}>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 488 512' fill='none' className={className}>
       <path d='M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z' />
     </svg>
   );
