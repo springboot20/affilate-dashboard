@@ -16,14 +16,14 @@ export const CompleteModal = () => {
     <Card
       className='flex flex-col items-center justify-center w-[34rem] h-[40rem] space-y-10'
       placeholder='modal card'>
-      <CardHeader placeholder='modal header' className='bg-transparent mt-6' shadow={false}>
+      <CardHeader placeholder='modal header' className='bg-transparent mt-10  ' shadow={false}>
         <SuccessIcon />
       </CardHeader>
       <CardBody placeholder='modal body' className='text-center space-y-5'>
-        <Typography as='h3' placeholder='modal title' className='text-2xl font-medium'>
+        <Typography as='h3' placeholder='modal title' className='text-3xl font-semibold'>
           Success
         </Typography>
-        <Typography placeholder='modal text' className='text-lg font-medium w-72'>
+        <Typography placeholder='modal text' className='text-xl font-medium w-82'>
           You’ve successfully submitted your property for review. We review it and get back to you.
         </Typography>
       </CardBody>
@@ -34,7 +34,7 @@ export const CompleteModal = () => {
           onClick={() => {
             navigate('/shop');
           }}
-          className='bg-affiliate-green py-3.5 capitalize w-full text-sm font-medium rounded-xl'>
+          className='bg-affiliate-green py-3.5 px-10 w-full text-sm uppercase  font-medium rounded-xl'>
           Okay
         </Button>
       </CardFooter>
