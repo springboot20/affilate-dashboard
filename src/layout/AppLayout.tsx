@@ -8,7 +8,7 @@ const AppLayout: React.FC = () => {
   return (
     <div className='w-full flex justify-between items-stretch h-screen flex-shrink-0'>
       <Navigation open={open} setOpen={setOpen} />
-      <main className='w-3/4 mt-28 lg:mt-0'>
+      <main className='w-full lg:w-3/4 mt-28 lg:mt-0'>
         <div className='w-full min-h-screen absolute justify-between lg:relative left-0 right-0'>
           <NavBar setOpen={setOpen} />
           <Outlet />
