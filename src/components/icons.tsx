@@ -159,11 +159,11 @@ export const HomePlusIcon = ({ className }: { className: string }) => {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       className={className}>
-      <circle cx='9.85758' cy='10.4508' r='7.91667' stroke='#05CE81' strokeWidth='1.5' />
+      <circle cx='9.85758' cy='10.4508' r='7.91667' stroke='#05CE81' strokeWidth='2.5' />
       <path
         d='M15.6909 16.2841L18.6076 19.2008'
         stroke='#05CE81'
-        strokeWidth='1.5'
+        strokeWidth='2.5'
         strokeLinecap='round'
       />
     </svg>

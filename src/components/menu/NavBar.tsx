@@ -30,7 +30,7 @@ export const NavBar: React.FC<{
           <div className='flex md:justify-start w-full md:w-auto items-center space-x-2 ml-2  '>
             <div className='relative min-w-[25rem] md:min-w-[32rem]'>
               <div className='grid place-items-center h-5 w-5 absolute top-1/2 -translate-y-1/2 left-4 z-10'>
-                <HomePlusIcon className='absolute' />
+                <HomePlusIcon className='absolute h-6' />
               </div>
               <Input
                 type='text'
