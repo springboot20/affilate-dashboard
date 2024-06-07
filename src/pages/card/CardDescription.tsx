@@ -13,7 +13,7 @@ import Laptop from '../../assets/laptop_devices.avif';
 
 const ProductDescription = () => {
   return (
-    <section className='max-w-9xl mx-auto mt-8'>
+    <section className='max-w-9xl mx-auto p-9'>
       <Card placeholder='card description container' className='p-12 '>
         <Link to='/shop' className='mt-5'>
           <Button

@@ -77,16 +77,17 @@ function App() {
             <PrivateRoute>
               <Shop />
             </PrivateRoute>
-          }>
-          <Route
-            path='/shop/:id'
-            element={
-              <PrivateRoute>
-                <ProductDescription />
-              </PrivateRoute>
-            }
-          />
-        </Route>
+          }
+        />
+
+        <Route
+          path='/shop/:id'
+          element={
+            <PrivateRoute>
+              <ProductDescription />
+            </PrivateRoute>
+          }
+        />
 
         <Route
           path='/partner'
