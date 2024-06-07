@@ -2,7 +2,7 @@ import React from 'react';
 
 const Profile = () => {
   return (
-    <section>
+    <section className='p-8 max-w-7xl mx-auto'>
       <div className='px-6'>
         <h1>Profile Page</h1>
       </div>
@@ -10,4 +10,4 @@ const Profile = () => {
   );
 };
 
-export default Profile
+export default Profile;
