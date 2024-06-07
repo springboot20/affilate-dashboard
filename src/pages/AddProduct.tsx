@@ -5,12 +5,14 @@ import { Add } from './product-form/Add';
 import { classNames } from '../utils';
 import { motion } from 'framer-motion';
 import { CompleteModal } from '../components/modal/Completed';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
   const [activeTab, setActiveTab] = useState('add');
   const [completed, setCompleted] = useState<boolean>(false);
 
-  console.log(activeTab);
+  const navigate = useNavigate();
 
   const motionConfig = {
     initial: {
@@ -28,20 +30,32 @@ const AddProduct = () => {
     },
   };
 
+  const completeHandler = () => {
+    setCompleted((prev) => !prev);
+    navigate('/shop');
+  };
+
   return (
     <motion.div {...motionConfig}>
       <section
         className={classNames(
-          'mx-auto lg:px-0 mt-8',
-          completed
-            ? 'place-content-center sm:place-items-center h-[calc(100vh-2rem)] mt-0'
-            : 'sm:place-items-center',
+          'mx-auto lg:px-0 mt-28',
+          completed ? 'place-content-center sm:place-items-center mt-0' : 'sm:place-items-center',
           'grid overflow-hidden'
         )}>
         {completed ? (
-          <motion.div {...motionConfig}>
-            <CompleteModal />
-          </motion.div>
+          <div className='fixed left-0 right-0 top-0 bg-black/30 backdrop-blur-md z-10 h-screen flex items-center justify-center'>
+            <button className='group p-4 absolute top-10 right-6 border rounded-md hover:bg-gray-100 transition-all'>
+              <span className='sr-only'> close</span>
+              <XMarkIcon
+                className='h-7 stroke-[3]  text-white group-hover:text-gray-800 transition-all'
+                onClick={completeHandler}
+              />
+            </button>
+            <motion.div {...motionConfig}>
+              <CompleteModal />
+            </motion.div>
+          </div>
         ) : (
           <Tabs value={activeTab} className='overflow-visible'>
             <TabsBody
@@ -72,4 +86,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct
+export default AddProduct;

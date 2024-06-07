@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardBody,
   CardFooter,
@@ -7,16 +6,13 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import { SuccessIcon } from '../icons';
-import { useNavigate } from 'react-router-dom';
 
 export const CompleteModal = () => {
-  const navigate = useNavigate();
-
   return (
     <Card
       className='flex flex-col items-center justify-center w-[34rem] h-[40rem] space-y-10'
       placeholder='modal card'>
-      <CardHeader placeholder='modal header' className='bg-transparent mt-10  ' shadow={false}>
+      <CardHeader placeholder='modal header' className='bg-transparent mt-10 ' shadow={false}>
         <SuccessIcon />
       </CardHeader>
       <CardBody placeholder='modal body' className='text-center space-y-5'>
@@ -28,15 +24,9 @@ export const CompleteModal = () => {
         </Typography>
       </CardBody>
       <CardFooter placeholder='modal footer' className='flex-1 flex-shrink-0'>
-        <Button
-          placeholder='modal button'
-          fullWidth
-          onClick={() => {
-            navigate('/shop');
-          }}
-          className='bg-affiliate-green py-3.5 px-10 w-full text-sm uppercase  font-medium rounded-xl'>
-          Okay
-        </Button>
+        <Typography as='h2' placeholder='message' className="text-xl font-semibold">
+          Thank you
+        </Typography>
       </CardFooter>
     </Card>
   );
