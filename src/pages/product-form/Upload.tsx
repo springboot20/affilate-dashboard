@@ -1,6 +1,6 @@
 import { Button, Typography, Card, CardBody, Tab, CardHeader } from '@material-tailwind/react';
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 
@@ -11,7 +11,9 @@ export const Upload = ({
   setActiveTab: React.Dispatch<React.SetStateAction<string>>;
   setCompleted: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const [uploadsImageFiles, setUploadImagesFiles] = useState<File[]>([]);
+  const [uploadsImageFiles, setUploadsImageFiles] = useState<File[]>([]);
+  const [imageToEdit, setImageToEdit] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const config = {
     initial: {
@@ -45,25 +47,42 @@ export const Upload = ({
       const file = event.target.files[0];
       const fileExt = file.name.split('.')[1];
 
-      if (
-        acceptedImageExtensions?.includes(fileExt) &&
-        uploadsImageFiles.length <= max_image_to_upload
-      ) {
-        console.log(uploadsImageFiles.length);
+      if (!acceptedImageExtensions.includes(fileExt)) {
+        toast(`Invalid file type. Accepted types are ${acceptedImageExtensions.join(', ')}`, {
+          type: 'error',
+        });
+        return;
+      }
+
+      if (uploadsImageFiles.length >= max_image_to_upload) {
         toast(
           `Number of images selected to upload is larger than the required number ${max_image_to_upload}`,
           { type: 'error' }
         );
-      } else {
-        setUploadImagesFiles((prevImages) => [file, ...prevImages]);
+
+        return;
       }
 
-      console.log(fileExt);
+      if (imageToEdit) {
+        // Replace the image
+        setUploadsImageFiles((prevImages) =>
+          prevImages.map((img) => (img.name === imageToEdit.name ? file : img))
+        );
+        setImageToEdit(null);
+      } else {
+        // Add a new image
+        setUploadsImageFiles((prevImages) => [file, ...prevImages]);
+      }
     }
   };
 
+  const handleImageEdit = (file: File) => {
+    setImageToEdit(file);
+    fileInputRef.current?.click();
+  };
+
   const handleImageRemove = (filename: File): void => {
-    setUploadImagesFiles([...uploadsImageFiles.filter((file) => file !== filename)]);
+    setUploadsImageFiles(uploadsImageFiles.filter((file) => file !== filename));
   };
 
   console.log(uploadsImageFiles);
@@ -105,10 +124,21 @@ export const Upload = ({
                     />
                   </CardHeader>
                   <CardBody placeholder='' className='absolute h-full w-full'>
-                    <button className='group-hover:opacity-100 opacity-0 z-30 absolute bottom-4 left-4 h-10 w-16 flex justify-center items-center rounded-md bg-black/40'>
-                      <span className='sr-only'>trash</span>
-                      <PencilIcon className='h-6 w-6 stroke-[3] text-white' />
-                    </button>
+                    <div>
+                      <input
+                        hidden
+                        type='file'
+                        id='edit'
+                        ref={fileInputRef}
+                        onChange={handleImageUpload}
+                      />
+                      <button
+                        onClick={() => handleImageEdit(image)}
+                        className='group-hover:opacity-100 opacity-0 z-30 absolute bottom-4 left-4 h-10 w-16 flex justify-center items-center rounded-md bg-black/40'>
+                        <span className='sr-only'>trash</span>
+                        <PencilIcon className='h-6 w-6 stroke-[3] text-white' />
+                      </button>
+                    </div>
 
                     <button
                       onClick={() => handleImageRemove(image)}
