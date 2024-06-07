@@ -1,4 +1,3 @@
-import React from 'react'
 import { PencilIcon } from '@heroicons/react/24/outline'
 import { Typography, Input } from '@material-tailwind/react'
 import { useFormik } from 'formik'
